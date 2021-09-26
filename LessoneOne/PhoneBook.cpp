@@ -35,12 +35,12 @@ std::tuple<std::string, PhoneNumber> PhoneBook::GetPhoneNumber(const std::string
     std::string text;
     int count = 0;
 
-    for(auto& sN : m_phoneBook){
-        if(sN.first.GetSurname() == surname){
+    std::for_each(std::begin(m_phoneBook), std::end(m_phoneBook), [&count, &out, &surname](std::pair<Person, PhoneNumber> pB){
+        if(pB.first.GetSurname() == surname){
             count++;
-            std::get<1>(out) = sN.second;
+            std::get<1>(out) = pB.second;
         }
-    }
+    });
 
     if(count == 1){
         return out;
