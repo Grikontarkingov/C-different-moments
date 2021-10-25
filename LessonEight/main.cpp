@@ -1,11 +1,5 @@
 #include <fstream>
-#include "PhoneBook.h"
 #include "PhoneBook_Test.h"
-
-TEST_F(PhoneBook_Test, get_methods){
-    ASSERT_EQ(phoneBookTest->GetPhoneNumberTest("Kozlovskii Artem Daniilovich"), "81 8281 7420182 1");
-    ASSERT_EQ(phoneBookTest->GetPersonTest("81 8281 7420182 1"), "Kozlovskii Artem Daniilovich");
-}
 
 int main() {
     std::ifstream in("PhoneBook.txt");

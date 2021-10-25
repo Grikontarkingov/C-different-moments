@@ -33,6 +33,12 @@ namespace PhoneBook{
     std::string& Person::GetSurname(){
         return m_surname;
     }
+    std::string& Person::GetName(){
+        return m_name;
+    }
+    std::string& Person::GetPatronymic(){
+        return m_patronymic.value();
+    }
 
     std::ostream& operator<< (std::ostream& out, const Person& person){
         out << person.m_surname << " " << person.m_name;

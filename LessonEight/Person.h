@@ -19,6 +19,8 @@ namespace PhoneBook{
 
         std::string GetFullName();
         std::string& GetSurname();
+        std::string& GetName();
+        std::string& GetPatronymic();
 
         friend std::ostream& operator<< (std::ostream& out, const Person& person);
         friend bool operator< (const Person& personOne, const Person& personTwo);
