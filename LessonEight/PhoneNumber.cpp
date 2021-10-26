@@ -21,19 +21,23 @@ namespace PhoneBook{
 
 
     std::string PhoneNumber::GetPhoneNumber(){
-        std::ostringstream out;
-        out << m_codeCountry << m_codeCity << m_number;
+        std::string temp;
+        temp.append(std::to_string(m_codeCountry));
+        temp.append(" ");
+        temp.append(std::to_string(m_codeCity));
+        temp.append(" ");
+        temp.append(m_number);
+        temp.append(" ");
         if(m_additionalNumber.has_value()){
-            std::string temp;
-            out.str(temp);
+            temp.append(std::to_string(m_additionalNumber.value()));
             return temp;
         }
         else{
-            std::string temp;
-            out << m_additionalNumber.value();
-            out.str(temp);
             return temp;
         }
+    }
+    std::optional<int> PhoneNumber::GetPhoneNumberAdditional(){
+        return m_additionalNumber;
     }
 
     std::ostream& operator<< (std::ostream& out, const PhoneNumber& phoneNumber){

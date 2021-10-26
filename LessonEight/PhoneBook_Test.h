@@ -25,16 +25,6 @@ protected:
     PhoneBook::PhoneBook *phoneBookTest;
 };
 
-TEST_F(PhoneBook_Test, FullName){
-    char const *surname = "Kozlovskii";
-    char const *name = "Artem";
-    char const *patronymic = "Daniilovich";
-    ASSERT_STREQ(personTest->GetSurname().c_str(), surname);
-    ASSERT_STRNE(personTest->GetSurname().c_str(), name);
-    ASSERT_STREQ(personTest->GetName().c_str(), name);
-    ASSERT_STRNE(personTest->GetName().c_str(), surname);
-    ASSERT_STREQ(personTest->GetPatronymic().c_str(), patronymic);
-    ASSERT_STRNE(personTest->GetPatronymic().c_str(), surname);
-}
+
 
 #endif //_PHONEBOOK_TEST_H

@@ -16,6 +16,7 @@ namespace PhoneBook{
         PhoneNumber(int codeCountry, int codeCity, std::string number, std::optional<int> additionalNumber);
 
         std::string GetPhoneNumber();
+        std::optional<int> GetPhoneNumberAdditional();
         void SetPhoneNumber(std::istringstream& line);
 
         friend std::ostream& operator<< (std::ostream& out, const PhoneNumber& phoneNumber);
